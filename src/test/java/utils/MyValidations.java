@@ -102,7 +102,7 @@ public class MyValidations {
         softAssert.assertAll();
     }
 
-    public static void verifyLogin(Response res , int expectedCode  , String fileData , String key  ){
+    public static void verifySign(Response res , int expectedCode  , String fileData , String key  ){
         SoftAssert softAssert = new SoftAssert();
 
         verifyStatusCode(res , expectedCode , softAssert);
