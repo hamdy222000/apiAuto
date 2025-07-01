@@ -1,0 +1,12 @@
+{
+  "login_successful": {
+    "email": "michael.lawson@reqres.in",
+    "password": "mahmoud2000"
+  },
+  "login_unsuccessful": {
+    "password": "michael.lawson@reqres.in"
+  },
+
+  "token": "QpwL5tke4Pnpja7X7",
+  "error": "Missing email or username"
+}

@@ -7,7 +7,8 @@ import utils.AllureManage;
 import utils.Logs;
 import utils.filesManage.CleanDir;
 
-public class TestngListeners implements ITestListener , IExecutionListener , IInvokedMethodListener {
+public class TestngListeners implements ITestListener , IExecutionListener , IInvokedMethodListener  {
+
 
     @Override
     public void onExecutionStart() {
@@ -23,7 +24,7 @@ public class TestngListeners implements ITestListener , IExecutionListener , IIn
 
     @Override
     public void onStart(ITestContext context) {
-        Logs.info("Beginning of the test " +  context.getName());
+        Logs.info("Beginning the test '" +  context.getName() + "'");
 
     }
 
@@ -31,7 +32,7 @@ public class TestngListeners implements ITestListener , IExecutionListener , IIn
     public void onFinish(ITestContext context) {
         ThreadContext.clearAll();
         ThreadContext.put("MethodName", "onFinish");
-        Logs.info("End of test " + context.getName());
+        Logs.info("End of the test '" + context.getName() + "'");
 
     }
 
@@ -65,7 +66,6 @@ public class TestngListeners implements ITestListener , IExecutionListener , IIn
                     Throwable  throwable = testResult.getThrowable();
                     Allure.step( "'" + className + "." + methodName + "' failed.\n" + "reason : " + throwable.getMessage());
                     Logs.warn( "'" + className + "." + methodName + "' failed.\n" + "reason : " + throwable.getMessage());
-                    AllureManage.takeScreenshotAndAddToReport(methodName);
                     AllureManage.addLogsToReport(methodName);
                 }
                 case ITestResult.SKIP -> {

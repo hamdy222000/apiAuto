@@ -1,0 +1,19 @@
+{
+  "create_user": {
+    "name": "mahmoud",
+    "job": "tester"
+  },
+
+  "update_user": {
+    "name": "mahmoud",
+    "job": "engineer"
+  },
+
+  "user2": {
+    "first_name": "Janet"
+  },
+
+  "existed_user": {
+    "first_name": "Tobias"
+  }
+}

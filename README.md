@@ -1,22 +1,22 @@
-# Swag Labs Test Automation
+# REST API Test Automation Framework
 
-This project is a simple and maintainable Selenium-based UI test automation framework for the [Swag Labs](https://www.saucedemo.com) demo site.  
-It is built using Java, Selenium WebDriver, and TestNG, and follows the Page Object Model (POM) design pattern.  
-The framework supports parallel execution with ThreadLocal, external test data in JSON format, detailed logging via Log4j2, and advanced reporting using Allure.
+This project is a simple, scalable, and maintainable REST API test automation framework for testing the [Reqres.in](https://reqres.in/) demo API.  
+It is built using Java, RestAssured, and TestNG, following clean code principles and best practices for API testing automation.  
+The framework supports parallel test execution, external JSON test data, detailed logging with Log4j2, and comprehensive reporting using Allure.
 
 ---
 
 ## Features
 
-- Page Object Model (POM) structure
-- Parallel test execution using ThreadLocal WebDriver
-- Logging using Log4j2
-- External JSON files for test data and browser configuration
-- Custom wait utility for element visibility, text, alerts, and URL
-- Allure report integration
-- Modular and scalable base class
-- Automatic attachment of logs and screenshots to Allure reports on test failure
-
+- Clean service classes to encapsulate API endpoints
+- Separate validation classes for response assertions
+- Parallel test execution support with TestNG
+- External JSON files for test data management
+- Custom reusable utilities for reading files, logging, and reporting
+- Log4j2 for advanced logging with per-test log files
+- RetryAnalyzer for retrying flaky tests automatically
+- Allure report integration with automatic attachment of logs in failure cases
+- Maven-based project for easy dependency and lifecycle management
 
 ---
 
@@ -24,8 +24,8 @@ The framework supports parallel execution with ThreadLocal, external test data i
 
 - Java 23
 - Maven
-- Selenium WebDriver 4.33
-- TestNG 7.8
+- RestAssured 5.5.5
+- TestNG 7.9
 - Allure Report (v2.24)
 - Log4j2 (v2.24.3)
 - JsonPath (for JSON handling)
@@ -35,62 +35,45 @@ The framework supports parallel execution with ThreadLocal, external test data i
 
 ## How to Run the Tests
 
-1. Clone the repository: 
+1. Clone the repository:
 ```bash
-git clone https://github.com/hamdy222000/swagLabAuto
+git clone https://github.com/hamdy222000/apiAuto.git
 ```
+2. Import the project as a Maven project into your IDE.
 
-2. Import the project into your IDE as a Maven project.
-
-3. Make sure Java 23 and Maven are installed on your system.
+3. Ensure Java 23 and Maven are installed on your system.
 
 4. Run the tests using Maven:
-   
 ```bash
-mvn clean test 
+mvn clean test
 ```
-Or run a specific TestNG suite (e.g., regression.xml):
-
+Or specify a TestNG suite XML file (e.g., regression.xml):
 ```bash
 mvn clean test "-Dsurefire.suiteXmlFiles=regression.xml"
 ```
-
 5. Generate and view the Allure report:
 ```bash
- allure serve testOut/allure-results
+allure serve testOut/allure-results
 ```
-   
+
 ---
 
 ## Test Coverage
 
-- Login: valid & invalid credentials  
-- Products Page:
-  - Product visibility  
-  - Filter functionality  
-  - Add/remove products  
-  - Reset app state  
-- Cart Page:
-  - Cart content validation  
-  - Product visibility in cart  
-  - Removing products from cart  
-- Checkout Information Page:
-  - Form field validations (names, postal codes, etc.)  
-- Overview & Completion Pages:
-  - Order summary validation  
-  - Confirmation message and finalization  
-- Logout:
-  - Logout process  
-  - Validation of redirection  
-- End-to-End Flow:
-  - Full purchase journey validation (login → buy → confirmation → logout )
+- Login API: valid and invalid scenarios
 
+- Registration API: success and failure cases
+
+- Users API: get list of users, get single user, create, update (PUT/PATCH), and delete operations
+
+- Resource API: get list of resources, get single resource, and handling not found cases
+
+- Response validations include status codes, body content, error messages, and empty responses
 
 ---
 
 ## Author
+Mahmoud Hamdy
+ISTQB Certified Tester Engineer – CTFL
 
-Mahmoud Hamdy ,
-ISTQB Certified Tester – CTFL  
-Automation Engineer – Java, Selenium, TestNG
 
