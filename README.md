@@ -8,7 +8,7 @@ The framework supports parallel test execution, external JSON test data, detaile
 
 ## Features
 
-- Clean service classes to encapsulate API endpoints
+- Clean service classes to encapsulate API endpoints 
 - Separate validation classes for response assertions
 - Parallel test execution support with TestNG
 - External JSON files for test data management
@@ -56,6 +56,8 @@ mvn clean test "-Dsurefire.suiteXmlFiles=regression.xml"
 ```bash
 allure serve testOut/allure-results
 ```
+Make sure Allure CLI is installed. [Installation guide](https://docs.qameta.io/allure/)
+
 
 ---
 
@@ -107,8 +109,10 @@ jobs:
           path: testOut/allure-results
 ```
 
+---
+
 ## Author
-Mahmoud Hamdy
-ISTQB Certified Tester Engineer – CTFL
+**Mahmoud Hamdy**  
+ISTQB® Certified Tester – CTFL
 
 
