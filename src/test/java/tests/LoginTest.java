@@ -1,7 +1,6 @@
 package tests;
 
 import io.restassured.response.Response;
-import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import services.LoginServices;
@@ -15,7 +14,6 @@ public class LoginTest {
     public void successfulLogin(){
         Response res = LoginServices.validLogin();
         LoginValidations.verifyValidLogin(res);
-        Assert.fail("i want that");
     }
 
     @Test
