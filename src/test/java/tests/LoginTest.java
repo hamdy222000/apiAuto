@@ -15,7 +15,7 @@ public class LoginTest {
     public void successfulLogin(){
         Response res = LoginServices.validLogin();
         LoginValidations.verifyValidLogin(res);
-        Assert.fail();
+        Assert.fail("lihi");
     }
 
     @Test
