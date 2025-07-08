@@ -73,8 +73,6 @@ allure serve testOut/allure-results
 
 ---
 
----
-
 ##  Continuous Integration (CI/CD)
 
 This project uses **GitHub Actions** to run REST API tests automatically on every `push` or `pull request` to the `main` branch.
