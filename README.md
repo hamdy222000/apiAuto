@@ -8,7 +8,7 @@ The framework supports parallel test execution, external JSON test data, detaile
 
 ## Features
 
-- Clean service classes to encapsulate API endpoints 
+- Clean service classes to encapsulate API endpoints  
 - Separate validation classes for response assertions
 - Parallel test execution support with TestNG
 - External JSON files for test data management
